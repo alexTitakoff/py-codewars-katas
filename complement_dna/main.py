@@ -23,3 +23,24 @@ def DNA_strand(dna):
 
 
 DNA_strand(dna)
+
+
+
+
+
+# Another solutions
+
+# 1
+# pairs = {'A':'T','T':'A','C':'G','G':'C'}
+# def DNA_strand(dna):
+#     return ''.join([pairs[x] for x in dna])
+
+
+# 2
+# def DNA_strand(dna):
+#     reference = { "A":"T",
+#                   "T":"A",
+#                   "C":"G",
+#                   "G":"C"
+#                   }
+#     return "".join([reference[x] for x in dna])
