@@ -22,16 +22,30 @@ def solve(s):
     if s == s[::-1]:
         print("OK")
         return "OK"
-    elif s[:-1] == s[:-1][::-1]:
-        print('remove one')
-        return 'remove one'
-    elif s[1:] == s[1:][::-1]:
-        print('remove one')
-        return 'remove one'
-    else:
-        print('not possible')
-        return 'not possible'
+
+    i = 0
+    for ch in s:
+        new_s = s[:i] + s[i + 1:]
+        if new_s == new_s[::-1]:
+            print('remove one')
+            return "remove one"
+        i += 1
+
+    print("not possible")
+    return "not possible"
 
 
 # solve("abba")
-solve("madmam")
+solve("hannah")
+
+
+
+
+# Best pratices
+
+# def solve(s):
+#     isOK = lambda x: x == x[::-1]
+#
+#     return ("OK" if isOK(s)  else
+#             "remove one" if any(isOK(s[:i] + s[i + 1:]) for i in range(len(s))) else
+#             "not possible")
